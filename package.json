@@ -1,0 +1,29 @@
+{
+  "name": "text-on-colour",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalieshapickering/text-on-colour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalieshapickering/text-on-colour/issues"
+  },
+  "homepage": "https://github.com/kalieshapickering/text-on-colour#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.22.2",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.39.0",
+    "sequelize-cli": "^5.0.1"
+  }
+}
