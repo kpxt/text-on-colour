@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/kalieshapickering/text-on-colour#readme",
   "dependencies": {
-    "@tensorflow/tfjs": "^0.13.2",
     "brain.js": "^1.4.2",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",

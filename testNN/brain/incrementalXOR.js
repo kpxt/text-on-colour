@@ -16,7 +16,7 @@ function fullyTrainXOR(net) {
     { input: [1, 0], output: [1] },
     { input: [1, 1], output: [0] }];
 
-    net.trainAsync(data).then(function (res) {
+    net.trainAsync(data, { log: true }).then(function (res) {
         console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
         console.log("This is the fully trained XOR problem");
         console.log(net.run([0, 0]));
@@ -47,7 +47,7 @@ function incrementalXOR1(net) {
         console.log("\n");
 
         // train net again with [1, 1] and output as net3
-        net.trainAsync(secondData.concat(firstData), { keepNetworkIntact: true, log: true }).then(function (res) {
+        net.trainAsync(secondData.concat(firstData), { log: true }).then(function (res) {
             console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
             console.log("This is how the net looks after at all four inputs");
             console.log(net.run([0, 0]));
@@ -64,14 +64,14 @@ function incrementalXOR1(net) {
 }
 
 function incrementalXOR2(net) {
-    console.log("\n first instance of net");
-    console.log(util.inspect(net, false, null, true /* enable colors */));
-    console.log("\n");
+    // console.log("\n first instance of net");
+    // console.log(util.inspect(net, false, null, true /* enable colors */));
+    // console.log("\n");
     // train given net with first three XOR inputs and output trained model as net2
     net.trainAsync(firstData, { log: true }).then(function (res) {
-        console.log("\n second instance of net");
-        console.log(util.inspect(net, false, null, true /* enable colors */));
-        console.log("\n");
+        // console.log("\n second instance of net");
+        // console.log(util.inspect(net, false, null, true /* enable colors */));
+        // console.log("\n");
         console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
         console.log("This is how an XOR problem looks at all four inputs before training it with the final data, [1, 1] => 0");
         console.log(net.run([0, 0]));
@@ -82,9 +82,9 @@ function incrementalXOR2(net) {
 
         // train net again with [1, 1] and output as net3
         net.trainAsync(secondData, { log: true }).then(function (res) {
-            console.log("\n third instance of net");
-            console.log(util.inspect(net, false, null, true /* enable colors */));
-            console.log("\n");
+            // console.log("\n third instance of net");
+            // console.log(util.inspect(net, false, null, true /* enable colors */));
+            // console.log("\n");
             console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
             console.log("This is how the net looks after at all four inputs");
             console.log(net.run([0, 0]));
@@ -101,4 +101,4 @@ function incrementalXOR2(net) {
     });
 }
 
-incrementalXOR2(net1);
+incrementalXOR1(net1);
