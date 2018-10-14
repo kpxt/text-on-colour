@@ -1,10 +1,10 @@
 var brain = require("brain.js");
-
+var util = require('util')
 var config = {
     binaryThresh: 0.5,
     inputSize: 2,
     hiddenLayers: [2],
-    activation: 'sigmoid'
+    activation: 'tanh',
 };
 
 // net1 is an empty NN
@@ -64,8 +64,14 @@ function incrementalXOR1(net) {
 }
 
 function incrementalXOR2(net) {
+    console.log("\n first instance of net");
+    console.log(util.inspect(net, false, null, true /* enable colors */));
+    console.log("\n");
     // train given net with first three XOR inputs and output trained model as net2
     net.trainAsync(firstData, { log: true }).then(function (res) {
+        console.log("\n second instance of net");
+        console.log(util.inspect(net, false, null, true /* enable colors */));
+        console.log("\n");
         console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
         console.log("This is how an XOR problem looks at all four inputs before training it with the final data, [1, 1] => 0");
         console.log(net.run([0, 0]));
@@ -76,6 +82,9 @@ function incrementalXOR2(net) {
 
         // train net again with [1, 1] and output as net3
         net.trainAsync(secondData, { log: true }).then(function (res) {
+            console.log("\n third instance of net");
+            console.log(util.inspect(net, false, null, true /* enable colors */));
+            console.log("\n");
             console.log("Trained model at " + res.iterations + " iterations and " + res.error + " errors.");
             console.log("This is how the net looks after at all four inputs");
             console.log(net.run([0, 0]));
@@ -92,4 +101,4 @@ function incrementalXOR2(net) {
     });
 }
 
-console.log(incrementalXOR(net1));
+incrementalXOR2(net1);
