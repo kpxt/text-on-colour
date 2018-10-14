@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text on Colour!</title>
+      <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0//css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+
+</header>
+<main>
+  {{{ body }}}
+</main>
+<footer>
+
+</footer>
+
+
+    <!-- components -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    <script type="text/javascript" src="/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+     <script>
+        $(document).ready(function () {
+            M.AutoInit();
+            $('ul.tabs').tabs('select_tab', 'tab_id');
+            $(".dropdown-trigger").dropdown();
+            $('.sidenav').sidenav();
+            $('input#input_text, textarea#textarea1').characterCounter();
+            $('#textarea1').val('New Text');
+            $('#textarea1').trigger('autoresize');
+
+        });
+    </script>
+</body>
+</html>
