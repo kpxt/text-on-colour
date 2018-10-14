@@ -5,6 +5,7 @@ var queryInterface = db.sequelize.getQueryInterface();
 
 var spread = 3;
 
+// mutate to support other grayscale functions; amount of functions must reflect amount of models in directory
 var grayscaleMethods = {
     "grayscaleOne": function (r, g, b) {
         return (r * 0.299) + (g * 0.587) + (b * 0.114);
@@ -29,7 +30,7 @@ function isWhiteText(gs, formula) {
     return gs <= formula(255, 255, 255) / 2;
 }
 
-function calcInsertColour(methods) {
+function calcInsertColour(methods, callback) {
     db.sequelize.sync({ force: true });
 
     var popSeeds = {};
@@ -50,7 +51,7 @@ function calcInsertColour(methods) {
                     });
                     console.log("Processing " + red + ", " + green + ", " + blue);
                     if (red >= 255 && green >= 255 && blue >= 255 && index === Object.keys(popSeeds).length - 1) {
-                        massInsert(popSeeds);
+                        massInsert(popSeeds, callback);
                         console.log("Done loading seeds");
                     }
                 });
@@ -58,17 +59,25 @@ function calcInsertColour(methods) {
         }
     }
 
-    function massInsert(seeds) {
+    function massInsert(seeds, callback) {
         var promises = [];
         Object.keys(popSeeds).forEach(function (table) {
             var promise = queryInterface.bulkInsert(table, popSeeds[table]);
             promises.push(promise);
         });
         Promise.all(promises).then(function (values) {
-            console.log(values);
-            console.log("Done updating database");
+            console.log("\n\n\n\n\nDone updating database\n\n\n\n\n");
+            if (callback) {
+                callback();
+            }
         });
     }
 }
 
-calcInsertColour(grayscaleMethods);
+if (process.argv[2] && process.argv[2] === "run") {
+    calcInsertColour(grayscaleMethods);
+}
+
+exports.run = function(callback){
+    calcInsertColour(grayscaleMethods);
+}
