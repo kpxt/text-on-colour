@@ -1,0 +1,12 @@
+First Grayscale conversion formula (rec601 Gamma-compressed Luma Intensity):
+R * 0.299 + G * 0.587 + B * 0.114
+
+Second Grayscale conversion formula (CIE 1931 and ITU-R BT.709 Standard Gamma-compressed Intensity):
+R * 0.2126 + G * 0.7152 + B * 0.0722
+
+Third Grayscale conversion formula (Non-Linear sRGB Gamma Correction):
+1.055 * ((R * 0.2126 + G * 0.7152 + B * 0.0722) / 255.0)^(1/2.4) - 0.055 when C-linear is less than or equal to 0.0031308
+12.92 * (R * 0.2126 + G * 0.7152 + B * 0.0722) when C-linear is greater than 0.0031308
+
+Fourth Grayscale conversion formula (ITU-R BT.2100 Luma Gamma-compressed Intensity):
+R * 0.2627 + G * 0.6780 + B * 0.0593
