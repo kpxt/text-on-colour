@@ -19,7 +19,7 @@ module.exports = function (DataTypes) {
             allowNull: false
         },
         grayscale: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
             min: 0,
             max: 255,
             allowNull: false
