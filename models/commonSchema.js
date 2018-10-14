@@ -1,5 +1,5 @@
 module.exports = function (DataTypes) {
-    var Schema = {
+    var schema = {
         red: {
             type: DataTypes.INTEGER,
             min: 0,
@@ -29,5 +29,5 @@ module.exports = function (DataTypes) {
             allowNull: false
         }
     };
-    return Schema;
+    return schema;
 };
