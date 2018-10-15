@@ -4,7 +4,7 @@ var db = require(path.join(__dirname, "index.js"));
 
 var brain = require("brain.js");
 
-module.exports = getAllData = function(cb) {
+module.exports = getAllData = function (cb) {
     var queryString = "";
     db.sequelize.query("SHOW TABLES").then(function (rows) {
         rows[0].forEach(function (obj, i) {
@@ -16,7 +16,22 @@ module.exports = getAllData = function(cb) {
         });
         db.sequelize.query(queryString).then(function (rows) {
             console.log("Retrieved " + rows[0].length + " entries");
-            cb(rows[0]);
+            var data = rows[0].map(row => format(row));
+            console.log(data);
+            cb(shuffle(data));
         });
     });
+    function format(row) {
+        return Boolean(row.whiteText) ? { input: [row.red, row.green, row.blue], output: { white: 1 } } : { input: [row.red, row.green, row.blue], output: { black: 1 } };
+    }
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
 }
