@@ -1,5 +1,0 @@
-First Grayscale coversion formula (Linear):
-R * 0.299 + G * 0.587 + B * 0.114
-
-Second Grayscale coversion formula (Linear):
-R * 0.2126 + G * 0.7152 + B * 0.0722
