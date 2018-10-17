@@ -42,12 +42,13 @@ function calcInsertColour(methods, callback) {
         for (var green = 0; green <= 255; green += spread) {
             for (var blue = 0; blue <= 255; blue += spread) {
                 Object.keys(methods).forEach(function (table, index) {
+                    var gs = methods[table](red, green, blue)
                     popSeeds[table].push({
                         red: red,
                         green: green,
                         blue: blue,
-                        grayscale: methods[table](red, green, blue),
-                        whiteText: isWhiteText(methods[table](red, green, blue), methods[table])
+                        grayscale: gs,
+                        whiteText: isWhiteText(gs, methods[table])
                     });
                     console.log("Processing " + red + ", " + green + ", " + blue);
                     if (red >= 255 && green >= 255 && blue >= 255 && index === Object.keys(popSeeds).length - 1) {
@@ -59,7 +60,7 @@ function calcInsertColour(methods, callback) {
         }
     }
 
-    function massInsert(seeds, callback) {
+    function massInsert(seeds, callback) {// change to seeds instead popseeds
         var promises = [];
         Object.keys(popSeeds).forEach(function (table) {
             var promise = queryInterface.bulkInsert(table, popSeeds[table]);

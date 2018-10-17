@@ -8,6 +8,10 @@ const path = require("path");
 // load sequelize models
 const db = require(path.join(__dirname, "models"));
 
+// install body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // load Handlebars template engine
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
