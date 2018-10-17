@@ -7,11 +7,13 @@ var tests = [[0, 0, 0], [14, 99, 237], [221, 11, 11], [207, 11, 221], [255, 246,
 
 var arg = process.argv[2], filename = "";
 if (arg) {
-    if (isNan(arg)) {
+    if (isNaN(arg)) {
         filename += arg + ".json";
     } else {
         filename += "nn" + arg + ".json";
     }
+} else {
+    filename += "nnZero.json";
 }
 
 function nnZero(data) {
