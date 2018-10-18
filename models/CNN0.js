@@ -13,10 +13,10 @@ if (arg) {
         filename += "nn" + arg + ".json";
     }
 } else {
-    filename += "nnZero.json";
+    filename += "nn0.json";
 }
 
-function nnZero(data) {
+function cnnZero(data) {
     var config = {
         binaryThresh: 0.5,
         activation: 'sigmoid',
@@ -38,4 +38,4 @@ function nnZero(data) {
     });
 }
 
-require(path.join(__dirname, "initialData"))(nnZero);
+require(path.join(__dirname, "CNNFormatData"))(cnnZero);

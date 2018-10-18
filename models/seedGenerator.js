@@ -3,7 +3,7 @@ var path = require("path");
 var db = require(path.join(__dirname, "index.js"));
 var queryInterface = db.sequelize.getQueryInterface();
 
-var spread = 3;
+var spread = 4;
 
 // mutate to support other grayscale functions; amount of functions must reflect amount of models in directory
 var grayscaleMethods = {
@@ -42,27 +42,26 @@ function calcInsertColour(methods, callback) {
         for (var green = 0; green <= 255; green += spread) {
             for (var blue = 0; blue <= 255; blue += spread) {
                 Object.keys(methods).forEach(function (table, index) {
+                    var gs = methods[table](red, green, blue)
                     popSeeds[table].push({
                         red: red,
                         green: green,
                         blue: blue,
-                        grayscale: methods[table](red, green, blue),
-                        whiteText: isWhiteText(methods[table](red, green, blue), methods[table])
+                        grayscale: gs,
+                        whiteText: isWhiteText(gs, methods[table])
                     });
                     console.log("Processing " + red + ", " + green + ", " + blue);
-                    if (red >= 255 && green >= 255 && blue >= 255 && index === Object.keys(popSeeds).length - 1) {
-                        massInsert(popSeeds, callback);
-                        console.log("Done loading seeds");
-                    }
                 });
             }
         }
     }
+    massInsert(popSeeds, callback);
+    console.log("Done loading seeds");
 
-    function massInsert(seeds, callback) {
+    function massInsert(seeds, callback) {// change to seeds instead popseeds
         var promises = [];
-        Object.keys(popSeeds).forEach(function (table) {
-            var promise = queryInterface.bulkInsert(table, popSeeds[table]);
+        Object.keys(seeds).forEach(function (table) {
+            var promise = queryInterface.bulkInsert(table, seeds[table]);
             promises.push(promise);
         });
         Promise.all(promises).then(function (values) {
@@ -78,6 +77,6 @@ if (process.argv[2] && process.argv[2] === "run") {
     calcInsertColour(grayscaleMethods);
 }
 
-exports.run = function(callback){
+exports.run = function (callback) {
     calcInsertColour(grayscaleMethods);
 }

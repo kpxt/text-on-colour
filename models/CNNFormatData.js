@@ -3,20 +3,24 @@ var path = require("path");
 var db = require(path.join(__dirname, "index.js"));
 
 module.exports = getAllData = function (cb) {
-    var queryString = "";
     db.sequelize.query("SHOW TABLES").then(function (rows) {
+        var promises = [], output = [];
         rows[0].forEach(function (obj, i) {
             var table = obj["Tables_in_textoncolour_db"];
-            queryString += "SELECT red, green, blue, grayscale, whiteText FROM " + table;
-            if (rows[0][i + 1]) {
-                queryString += " UNION ALL "
-            }
+            promises.push(db[table].findAll({
+                attributes: ["red", "green", "blue", "whiteText"]
+            }));
         });
-        db.sequelize.query(queryString).then(function (rows) {
-            console.log("Retrieved " + rows[0].length + " entries");
-            var data = rows[0].map(row => format(row));
-            console.log(data);
-            cb(shuffle(data));
+            Promise.all(promises).then(function (tableData) {
+                tableData.forEach(function(tableResults, i) {
+                    console.log("Retrieved " + tableResults.length);
+                    var data = tableResults.map(row => format(row));
+                    output.push(shuffle(data));
+                    console.log(data);
+                });
+                if (cb) {
+                    cb(output);
+                }
         });
     });
     function format(row) {

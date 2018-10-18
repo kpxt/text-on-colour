@@ -8,14 +8,18 @@ const path = require("path");
 // load sequelize models
 const db = require(path.join(__dirname, "models"));
 
+// install body-parser
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // load Handlebars template engine
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
 // load and use routes set in the controller
-const routes = require(path.join(__dirname, 'controllers', 'textoncolourController.js'));
-app.use(routes);
+// require('./controllers/textoncolourController.js')(app);
 
 // set static resources
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,3 +30,4 @@ db.sequelize.sync().then(() => {
         console.log("Listening on port " + app.get("port"));
     });
 });
+
