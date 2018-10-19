@@ -1,33 +1,47 @@
-// load express and handlebars
-const express = require("express");
-const exphbs = require("express-handlebars");
-const app = express();
+require("dotenv").config();
+var express = require("express");
+var exphbs = require("express-handlebars");
 
-const path = require("path");
+var db = require("./models");
 
-// load sequelize models
-const db = require(path.join(__dirname, "models"));
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-// install body-parser
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static("public"));
 
-// load Handlebars template engine
-app.engine("handlebars", exphbs({
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
     defaultLayout: "main"
-}));
+  })
+);
 app.set("view engine", "handlebars");
-// load and use routes set in the controller
-// require('./controllers/textoncolourController.js')(app);
 
-// set static resources
-app.use(express.static(path.join(__dirname, 'public')));
+// Routes
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
-app.set("port", process.env.PORT || 8080);
-db.sequelize.sync().then(() => {
-    app.listen(app.get("port"), function () {
-        console.log("Listening on port " + app.get("port"));
-    });
+var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+// Starting the server, syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
 
+module.exports = app;
