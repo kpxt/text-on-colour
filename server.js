@@ -24,6 +24,8 @@ app.set("view engine", "handlebars");
 // set static resources
 app.use(express.static(path.join(__dirname, 'public')));
 
+require(path.join(__dirname, "routes", "htmlRoutes"))(app);
+
 app.set("port", process.env.PORT || 8080);
 db.sequelize.sync().then(() => {
     app.listen(app.get("port"), function () {

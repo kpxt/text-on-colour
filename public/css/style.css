@@ -1,0 +1,14 @@
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#colorpicker {
+    margin: 30px;
+}
+
+#color {
+    margin: 75px 30px;
+    font-size: 75px;
+    font-weight: bolder;
+}

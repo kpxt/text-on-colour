@@ -2,26 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
-<div class="jumbotron mt-4">
-                    
-<script src="jscolor.js"></script>
+                <div class="jumbotron mt-4">
+                    <form><input type="text" id="color" name="color" value="#123456" /></form>
 
-<p>Background color:
-<input class="jscolor {onFineChange:'update(this)'}" value="cc66ff">
-
-<p id="rect" style="border:5px solid gray; width:500px; height:500px;">
-
-
-
-    </div>
-
+                    <div id="colorpicker"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-function update(jscolor) {
-    // 'jscolor' instance can be used as a string
-    document.getElementById('rect').style.backgroundColor = '#' + jscolor
-}
-</script>
