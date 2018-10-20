@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     $.ajax({
       method: "GET",
-      url: "/api/"
+      url: "/api/colour"
     }).then((net) => {
       console.log(net);
     });
