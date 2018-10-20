@@ -16,7 +16,7 @@ module.exports = getAllData = function (cb) {
             console.log("Retrieved " + rows[0].length + " entries");
             var data = rows[0].map(row => format(row));
             console.log(data);
-            cb(shuffle(data));
+            cb(shuffle(data), true, true);
         });
     });
     function format(row) {

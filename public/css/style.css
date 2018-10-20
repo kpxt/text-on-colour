@@ -1,0 +1,57 @@
+#colorpicker {
+    margin-left: 30px;
+}
+
+.main {
+    margin-top: -50px !important;
+    margin-left: 400px !important;
+}
+
+#color {
+    margin: 84px 270px;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.colour1 {
+    border-style: solid;
+    border-width: 10px;
+    height: 250px;
+}
+
+.colour2 {
+    border-style: solid;
+    border-width: 10px;
+    height: 250px;
+}
+
+#grad1 {
+    background: red;
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.backfeature{
+    border-radius: 6%;
+}
+.about1{
+    border-radius: 49%;
+    width: 59%;
+    margin-left: 21%;
+}
+.about2{
+    border-radius: 4%
+}
