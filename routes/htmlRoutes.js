@@ -11,6 +11,14 @@ module.exports = function(app) {
       res.render("colourpicker");
  
   });
+  app.get("/about", function(req, res) {
+    res.render("about");
+
+});
+app.get("/back-end", function(req, res) {
+  res.render("back-end");
+
+});
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

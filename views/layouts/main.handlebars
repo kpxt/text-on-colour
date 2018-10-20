@@ -12,18 +12,65 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/farbtastic/farbtastic.css" type="text/css">
 </head>
-
 <body>
-    <header>
 
+    <header>
+        <nav>
+    <div class="nav-wrapper #212121 grey darken-4">
+      <a href="/" class="brand-logo center"><i class="material-icons">assessment</i>JS Colour Picker</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/background.png">
+      </div>
+      <a href="/"><h5><strong>Colour Picker</strong></h5></a>
+      <br><br>
+    </div></li>
+    <li><a href="/about"><i class="material-icons">cloud</i>About This Project</a></li>
+    <li><a href="/back-end"><i class="material-icons">build</i>Back-end Structure</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Artificial Intelligence Picker</a></li>
+    <li><a class="waves-effect" href="/colourpicker">Pick a Colour!<i class="material-icons">edit</i></a></li>
+  </ul>
+     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </header>
     <main>
         {{{ body }}}
     </main>
-    <footer>
 
-    </footer>
-
+    <footer class="page-footer #212121 grey darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">JS Colour Picker</h5>
+                <p class="grey-text text-lighten-4">JS Colour picker write something cool here</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+<li><a class="grey-text text-lighten-3" href="https://github.com/kalieshapickering/text-on-colour">GitHub Repo</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Arvin's Portfolio</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Kaliesha's Portfolio</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Gaby's Portfolio</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Jon's Portfolio</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright #000000 black">
+            <div class="container">
+                     Coded with ♡ by Arvin, Kaliesha, Gaby &amp; Jon  </div>
+          </div>
+        </footer>
+<script ></script>
 
     <!-- components -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
@@ -32,6 +79,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="/javascript/colourpicker.js"></script>
+    <script type="text/javascript" src="/javascript/app.js"></script>
 </body>
 
 </html>
