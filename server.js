@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 
 // load sequelize models
-const db = require(path.join(__dirname, "models"));
+// const db = require(path.join(__dirname, "models"));
 
 // install body-parser
 var bodyParser = require("body-parser");
@@ -24,12 +24,13 @@ app.set("view engine", "handlebars");
 // set static resources
 app.use(express.static(path.join(__dirname, 'public')));
 
+require(path.join(__dirname, "routes", "apiRoutes"))(app);
 require(path.join(__dirname, "routes", "htmlRoutes"))(app);
 
 app.set("port", process.env.PORT || 8080);
-db.sequelize.sync().then(() => {
+// db.sequelize.sync().then(() => {
     app.listen(app.get("port"), function () {
         console.log("Listening on port " + app.get("port"));
     });
-});
+// });
 

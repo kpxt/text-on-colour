@@ -1,18 +1,14 @@
-var db = require("../models");
-
+// var db = require("../models");
+var net = require("../models/neuralNets/nnZero.json")
 module.exports = function(app) {
   // Get all colour preferences
-  app.get("/api/", function(req, res) {
-    db.placeholder.findAll({}).then(function(dbplaceholder) {
-      res.json(dbplaceholder);
-    });
+  app.get("/api/colour", function(req, res) {
+    res.send(net);
   });
 
   // Create a new colour preference
   app.post("/api/", function(req, res) {
-    db.placeholder.create(req.body).then(function(dbplaceholder) {
-      res.json(dbplaceholder);
-    });
+
   });
 
 
