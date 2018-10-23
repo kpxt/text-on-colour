@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function () {
   // Materialize set up
   M.AutoInit();
@@ -16,16 +15,3 @@ $(document).ready(function () {
     $("body, this").css("background-color", "rgb(153, 255, 247)");
   }
 });
-=======
-
-$(document).ready(function(){
-    M.AutoInit();
-    $('.sidenav').sidenav();
-    $.ajax({
-      method: "GET",
-      url: "/api/colour"
-    }).then((net) => {
-      console.log(net);
-    });
-  });
->>>>>>> frontend
