@@ -1,5 +1,9 @@
+body {
+    background-color: rgb(237, 237, 237)
+}
 #colorpicker {
-    margin-left: 30px;
+    margin-left: 739px !important;
+    margin-top: 25px !important;
 }
 
 .main {
@@ -8,7 +12,8 @@
 }
 
 #color {
-    margin: 84px 270px;
+    margin-top: 115px;
+    margin-left: 601px;
     font-size: 75px;
     font-weight: bolder;
 }
@@ -26,13 +31,23 @@ main {
 .colour1 {
     border-style: solid;
     border-width: 10px;
-    height: 250px;
+    height: 273px;
+    width: 350px;
+    margin-left: 38%;
+    margin-top:3%;
 }
 
 .colour2 {
     border-style: solid;
     border-width: 10px;
-    height: 250px;
+    height: 273px;
+    width: 350px;
+    margin-left: 10%;
+    margin-top:3%;
+}
+
+.cpTitle{
+    margin-left: 27%;
 }
 
 #grad1 {
@@ -69,4 +84,17 @@ a:hover {
 }
 .round {
     border-radius: 50%;
+}
+.searchBar{
+    margin-top: 7% !important;
+    margin-left: -2% !important;
+    width: 87%;
+}
+.searchIcon{
+    margin-top: -73% !important;
+    margin-left: -22% !important;
+    
+}
+.close{
+    margin-top: -10% !important;
 }
