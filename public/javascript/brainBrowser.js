@@ -26574,3 +26574,4 @@ function config (name) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[47])(47)
 });
+console.log("Brain.js loaded");

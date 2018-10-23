@@ -1,10 +1,17 @@
-$(document).ready(function(){
-    M.AutoInit();
-    $('.sidenav').sidenav();
-    $.ajax({
-      method: "GET",
-      url: "/api/colour"
-    }).then((net) => {
-      console.log(net);
-    });
-  });
+$(document).ready(function () {
+  // Materialize set up
+  M.AutoInit();
+  try {
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+  } catch (err) {
+    console.log("Error: " + err.message);
+  }
+  $(".dropdown-trigger").dropdown();
+  $('.sidenav').sidenav();
+  $('input#input_text, textarea#textarea1').characterCounter();
+  $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
+  if ($("#container").hasClass("trainPage")) {
+    $("body, this").css("background-color", "rgb(153, 255, 247)");
+  }
+});

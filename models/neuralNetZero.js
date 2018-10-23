@@ -3,7 +3,7 @@ var path = require("path");
 
 var brain = require("brain.js");
 
-var tests = [[0, 0, 0], [14, 99, 237], [221, 11, 11], [207, 11, 221], [255, 246, 0], [32, 84, 0], [255, 255, 255]];
+var tests = [[0, 0, 0], [14, 99, 237], [221, 11, 11], [207, 11, 221], [255, 246, 0], [32, 84, 0], [255, 255, 255], [242, 228, 36]];
 
 var arg = process.argv[2], filename = "";
 
@@ -43,7 +43,7 @@ function nnZero(data, write, initial, preconfig) {
             return reject(err);
         }
         if (write) { // change back to filename when done testing
-            fs.writeFile(path.join(__dirname, "./neuralNets", initial ? filename : "writeTrain.json"), JSON.stringify(net), "utf8", function (err) {
+            fs.writeFile(path.join(__dirname, "./neuralNets", initial ? filename : "writeTrain.json"), net.toJSON(), "utf8", function (err) {
                 if (err) throw reject;
                 console.log("File written");
             });
