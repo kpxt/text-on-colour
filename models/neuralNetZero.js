@@ -43,7 +43,8 @@ function nnZero(data, write, initial, preconfig) {
             return reject(err);
         }
         if (write) { // change back to filename when done testing
-            fs.writeFile(path.join(__dirname, "./neuralNets", initial ? filename : "writeTrain.json"), net.toJSON(), "utf8", function (err) {
+            console.log(net.toJSON());
+            fs.writeFile(path.join(__dirname, "./neuralNets", initial ? filename : "writeTrain.json"), JSON.stringify(net.toJSON()), "utf8", function (err) {
                 if (err) throw reject;
                 console.log("File written");
             });

@@ -2,6 +2,7 @@
 var path = require("path");
 var fs = require("fs");
 var preconfigNet = require("../models/neuralNets/nnZero.json");
+console.log(preconfigNet);
 var { training } = require("../models/neuralNetZero");
 
 module.exports = function (app) {
