@@ -4,3 +4,4 @@ npm-debug.log
 .env
 trials
 models/neuralNets/
+.vscode

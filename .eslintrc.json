@@ -2,29 +2,22 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "node": true
+        "es6": true,
+        "node": true,
+        "jquery": true
     },
-    "extends": "prettier",
-    "plugins": [
+    "extends": [
+        "eslint:recommended",
         "prettier"
-      ],
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
     "rules": {
-        "no-duplicate-case":"error",
-        "no-empty":"error",
-        "no-extra-semi":"error",
-        "no-func-assign": "error",
-        "no-irregular-whitespace":"error",
-        "no-unreachable": "error",
-        "curly": "error",
-        "dot-notation": "error",
-        "eqeqeq": "error",
-        "no-empty-function": "error",
-        "no-multi-spaces": "error",
-        "no-unused-vars": "error",
-        "camelcase": "error",
         "indent": [
             "error",
-            2
+            "tab"
         ],
         "linebreak-style": [
             "error",
@@ -38,6 +31,14 @@
             "error",
             "always"
         ],
-        "prettier/prettier": "error"
+        "no-console": 0
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "globals": {
+        "M": true,
+        "getNet": true,
+        "brain": true
     }
 }

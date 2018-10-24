@@ -1,3 +1,5 @@
 models/index.js
 node_modules
-
+public/farbtastic/farbtastic.js
+public/javascript/brainBrowser.js
+test
