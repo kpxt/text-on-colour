@@ -11,7 +11,5 @@ $(document).ready(function () {
   $('input#input_text, textarea#textarea1').characterCounter();
   $('#textarea1').val('New Text');
   $('#textarea1').trigger('autoresize');
-  if ($("#container").hasClass("trainPage")) {
-    $("body, this").css("background-color", "rgb(153, 255, 247)");
-  }
+  
 });

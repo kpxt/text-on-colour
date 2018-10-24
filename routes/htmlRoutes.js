@@ -1,4 +1,6 @@
 var net = require("../models/neuralNets/nnZero.json");
+var aboutObj = require("../models/about.json");
+
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
@@ -10,9 +12,16 @@ module.exports = function (app) {
     res.render("colourpicker");
 
   });
-  app.get("/about", function (req, res) {
-    res.render("about");
-
+  app.get("/about/:page?", function (req, res) {
+    if (req.params.page) {
+      res.render("about", {
+        about: aboutObj[req.params.page]
+      });
+    } else {
+      res.render("about", {
+        about: aboutObj[process]
+      });
+    }
   });
   app.get("/back-end", function (req, res) {
     res.render("back-end");

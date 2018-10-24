@@ -1,11 +1,16 @@
 <div class="container">
-
     <h4 class="center"><strong>About This Project</strong></h4>
-    <a href="#" class="previous round">&#8249;</a>
+    <div class="leftArrow"></div>
     <div class="row">
         <div class="card-panel about2 #9e9e9e grey">
-            {{> aboutinfo}}
+            {{#each about}}
+            {{#> aboutinfo}}
+
+            {{/aboutinfo}}
+            {{/each}}
+
         </div>
     </div>
-    <a href="#" class="next round">&#8250;</a>
+    <div class="rightArrow"></div>
 </div>
+<script src="/javascript/about.js"></script>
