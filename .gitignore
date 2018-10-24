@@ -3,5 +3,5 @@ node_modules
 npm-debug.log
 .env
 trials
-models/neuralNets/
+models/neuralNets
 .vscode
