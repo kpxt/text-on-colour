@@ -19,20 +19,20 @@
   },
   "homepage": "https://github.com/kalieshapickering/text-on-colour#readme",
   "dependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.7",
     "body-parser": "^1.18.3",
     "brain.js": "^1.4.2",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-    "moment": "^2.22.2",
     "mysql2": "^1.6.1",
     "sequelize": "^4.39.0",
     "sequelize-cli": "^5.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "prettier": "^1.14.3"
   }
 }
