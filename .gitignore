@@ -3,5 +3,4 @@ node_modules
 npm-debug.log
 .env
 trials
-node_modules
 models/neuralNets
