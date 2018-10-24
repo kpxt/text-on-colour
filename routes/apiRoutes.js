@@ -22,7 +22,7 @@ module.exports = function (app) {
   });
 
   // Create a new colour preference
-  app.post("/api/", function (req, res) {
+  app.post("/api/neuralNet", function (req, res) {
     // retrieve the new neural net file after post
     // send net when training is done as a response
     training(req.body, true, false, preconfigNet).then(function (data) {

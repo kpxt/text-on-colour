@@ -18,12 +18,11 @@ app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
-// load and use routes set in the controller
-// require('./controllers/textoncolourController.js')(app);
 
 // set static resources
 app.use(express.static(path.join(__dirname, 'public')));
 
+// load controller
 require(path.join(__dirname, "routes", "apiRoutes"))(app);
 require(path.join(__dirname, "routes", "htmlRoutes"))(app);
 
