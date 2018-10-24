@@ -1,18 +1,22 @@
 {
     "process": {
         "name": "Overall Appication Process",
-        "info": "Hello this is Arvy"
+        "info": "Hello this is Arvy",
+        "raw": "process"
     },
     "development": {
         "name": "Motivation for Development",
-        "info": ""
+        "info": "",
+        "raw": "development"
     },
     "design": {
         "name": "Design Process",
-        "info": "text-on-colour-flowchart.png"
+        "info": "text-on-colour-flowchart.png",
+        "raw": "design"
     },
     "future": {
         "name": "Directions for Furture Development",
-        "info": ""
+        "info": "",
+        "raw": "future"
     }
 }
