@@ -98,3 +98,18 @@ a:hover {
 .close{
     margin-top: -10% !important;
 }
+.inputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colourText {
+    font-size: 75px;
+    font-weight: bold;
+}
+#whiteText {
+    color: #ffffff;
+}
+#blackText {
+    color: #000000;
+}

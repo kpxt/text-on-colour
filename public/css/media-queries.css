@@ -1,12 +1,33 @@
+/* iPads (portrait and landscape) ----------- */
+@media screen and (max-width: 1024px) {
 
-    /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-        /* Styles */
-        }
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    /* Styles */
+    /* index */
+    #colorpicker {
+        margin-left: 41% !important;
+        margin-top: 4% !important;
     }
 
+    #color {
+        margin-top: 5% !important;
+        margin-left: 28% !important;
 
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width: 480px) {
+
+    /* index */
+    #colorpicker {
+        margin-left: 41% !important;
+        margin-top: 4% !important;
+    }
+
+    #color {
+        margin-top: 4% !important;
+        margin-left: 35% !important;
+        font-size: 30px !important;
+
+    }
+
+}
