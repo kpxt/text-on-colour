@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     if (rightHref) {
         let rightAnchor = $("<a>");
-        let rightArrow = "&#8249;";
+        let rightArrow = "&#8250;";
         rightAnchor.addClass("next round");
         rightAnchor.attr("href", "/about/" + rightHref);
         rightAnchor.append(rightArrow);

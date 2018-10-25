@@ -1,12 +1,7 @@
 var net = require("../models/neuralNets/nnZero.json");
 var aboutObj = require("../models/about.json");
 
-let all = {};
-Object.keys(aboutObj).map(type => {
-  aboutObj[type].forEach((option) => {
-    all[option.raw] = option;
-  });
-});
+
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
@@ -20,9 +15,9 @@ module.exports = function (app) {
   });
   app.get("/about/:page?", function (req, res) {
     if (req.params.page) {
+      console.log(aboutObj[req.params.page]);
       res.render("about", {
-        about: aboutObj[req.params.page],
-        aboutinfo: all
+        about: aboutObj[req.params.page]
       });
     } else {
       res.render("about", {

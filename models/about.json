@@ -1,22 +1,18 @@
 {
     "process": {
-        "name": "Overall Appication Process",
-        "info": "Hello this is Arvy",
-        "raw": "process"
+        "name": "Overall Application Process",
+        "info": "<h6>Neural Network</h6><br><p class='grey-text text-lighten-3'>Using the library brain.js and Sequelize we created 1.5 million seeds using various colour to grey-scale (physics) forumalae. We then instantiated a neural network by using brain.js, modelled by the following diagram:</p><br><br><img class='ffnImage' src='/images/FFN.png'><br><br><br><p class='grey-text text-lighten-3'>We then used the seeds to train the initial neural network and send it to the user through HTTP.</p><h6>AI Colour Picker</h6><br><p class='grey-text text-lighten-3'>AI Colour Picker uses the Farbtastic plug-in widget to dynamically update the HTML page through JavaSript. As you drag your mouse across the Farbtasic plug-in it constanly returns a string as a hex-colour. We then convert that hex-colour string to an array of RBG values and immediately returns an array which is then run against the pretrained neural net.</p><br><br><h5>Train the Network!</h5><br><p class='grey-text text-lighten-3'>Using randomly selected colours the user is asked their preference on wether the background colour looks better on white or black text. The response is then post and trained against the pre-configured neural network in-real time.</p>"
     },
     "development": {
         "name": "Motivation for Development",
-        "info": "",
-        "raw": "development"
+        "info": "<h6>Q:How can I know wether to use white or black text on a specific background colour??</h6><br><br><p class='grey-text text-lighten-3'>A:You can never actually have a definitive answer to this question. Even in physics there are multiple formulae to solve this question because it is based on human perception.</p><br><br><h6>What We Did</h6><br><p class='grey-text text-lighten-3'>We trained an AI to take input from these calculations and user preference to narrow down this answer as much as possible.</p>"
     },
     "design": {
         "name": "Design Process",
-        "info": "text-on-colour-flowchart.png",
-        "raw": "design"
+        "info": "<img class='flowchart' src='/images/text-on-colour-flowchart.png'>"
     },
     "future": {
         "name": "Directions for Furture Development",
-        "info": "",
-        "raw": "future"
+        "info": "<ul class='grey-text text-lighten-3'><li>&#8212; Updating the neural network to run using Python, specificaly tensorflow.py</li><li>&#8212; Add in a visual neural network that represents the change in the neural net tensors and neurons during training</li><li>&#8212; Have 'Train the AI!' present the user with missing data sets rather than random colours</li><li>&#8212; Make the codebase much more modular in order to expand</li><li>&#8212; Updated front-end</li></ul>"
     }
-}
+}   

@@ -1,6 +1,7 @@
 body {
     background-color: rgb(237, 237, 237)
 }
+
 #colorpicker {
     margin-left: 739px !important;
     margin-top: 25px !important;
@@ -34,7 +35,7 @@ main {
     height: 273px;
     width: 350px;
     margin-left: 38%;
-    margin-top:3%;
+    margin-top: 3%;
 }
 
 .colour2 {
@@ -43,10 +44,10 @@ main {
     height: 273px;
     width: 350px;
     margin-left: 10%;
-    margin-top:3%;
+    margin-top: 3%;
 }
 
-.cpTitle{
+.cpTitle {
     margin-left: 27%;
 }
 
@@ -59,9 +60,11 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.backfeature{
+
+.backfeature {
     border-radius: 6%;
 }
+
 a {
     text-decoration: none;
     display: inline-block;
@@ -69,12 +72,11 @@ a {
 }
 
 a:hover {
-    background-color: #ddd;
     color: black;
 }
 
 .previous {
-    background-color:rgb(52, 49, 49);
+    background-color: rgb(52, 49, 49);
     color: white;
 }
 
@@ -82,34 +84,82 @@ a:hover {
     background-color: rgb(52, 49, 49);
     color: white;
 }
+
 .round {
     border-radius: 50%;
 }
-.searchBar{
+
+.searchBar {
     margin-top: 7% !important;
     margin-left: -2% !important;
     width: 87%;
 }
-.searchIcon{
+
+.searchIcon {
     margin-top: -73% !important;
     margin-left: -22% !important;
-    
+
 }
-.close{
+
+.close {
     margin-top: -10% !important;
 }
+
 .inputBox {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .colourText {
     font-size: 75px;
     font-weight: bold;
 }
+
 #whiteText {
     color: #ffffff;
 }
+
 #blackText {
     color: #000000;
+}
+
+.flowchart {
+    max-width: 100%
+}
+
+.next {
+    margin-top: 987%;
+}
+
+.previous {
+    margin-top: 987%;
+}
+
+.libraryLogos {
+    width: 150px;
+    display: block;
+    margin-left: 60%;
+
+}
+
+.libraryTitle {
+    margin-left: 60%;
+}
+
+.ffnImage {
+    width: 450px;
+}
+
+.grey-text {
+
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+h2 {
+    letter-spacing: 2px;
+}
+.about2{
+    max-width: 850px;
 }
