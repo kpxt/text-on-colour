@@ -27,6 +27,14 @@ module.exports = function (DataTypes) {
 		whiteText: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false
+		},
+		createdAt: {
+			type: DataTypes.DATE,
+			defaultValue: DataTypes.NOW
+		},
+		updatedAt: {
+			type: DataTypes.DATE,
+			defaultValue: DataTypes.NOW
 		}
 	};
 	return schema;
