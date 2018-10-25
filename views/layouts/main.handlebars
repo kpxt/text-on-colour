@@ -7,13 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Text on Colour!</title>
   <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/media-queries.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0//css/materialize.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/farbtastic/farbtastic.css" type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-  <link rel="shortcut icon" href="">
-
 </head>
 
 <body>
@@ -21,22 +20,13 @@
   <header>
     <nav>
       <div class="nav-wrapper #212121 grey darken-4">
-        <a href="/" class="brand-logo center"><span id="grad1">JS Colour Picker</span></a>
+        <ul class="left hide-on-med-and-down">
+        </ul>
+        <a href="/" class="brand-logo center"><span class="grad1">AI Colour Picker</span></a>
         <ul class="right hide-on-med-and-down">
-          {{!-- <li><a href="sass.html"><i class="material-icons">search</i></a></li> --}}
           <li>
-            <div class="nav-wrapper">
-              <form>
-                <div class="input-field white searchBar">
-                  <input id="search" type="search" required>
-                  <label class="label-icon" for="search"><i class="material-icons searchIcon" id="grad1">search</i></label>
-                  <i class="material-icons close">close</i>
-                </div>
-              </form>
-            </div>
+            <a href="/api/neuralNet"><i class="material-icons">view_module</i></a>
           </li>
-          <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-          <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
         </ul>
         <ul id="searchbar" class="dropdown-content">
 
@@ -48,10 +38,10 @@
       <li>
         <div class="user-view">
           <div class="background">
-            <img src="images/background.png">
+            <img src="/images/background.png">
           </div>
           <a href="/">
-            <h5><strong>Colour Picker</strong></h5>
+            <h5><strong>AI Colour Picker</strong></h5>
           </a>
           <br><br>
         </div>
@@ -60,10 +50,10 @@
         <li>
           <div class="collapsible-header"><i class="material-icons">cloud</i>About This Project</div>
           <div class="collapsible-body">
-            <a class="waves-effect" href="/about">Application Process</a>
-            <a class="waves-effect" href="/about">Motivation for Development</a>
-            <a class="waves-effect" href="/about">Design Process</a>
-            <a class="waves-effect" href="/about">Furture Developments</a>
+            <a class="waves-effect" href="/about/process">Application Process</a>
+            <a class="waves-effect" href="/about/development">Motivation for Development</a>
+            <a class="waves-effect" href="/about/design">Design Process</a>
+            <a class="waves-effect" href="/about/future">Furture Developments</a>
           </div>
         </li>
       </ul>
@@ -72,9 +62,9 @@
         <div class="divider"></div>
       </li>
       <li><a class="subheader">Artificial Intelligence Picker</a></li>
-      <li><a class="waves-effect" href="/colourpicker">Pick a Colour!<i class="material-icons">edit</i></a></li>
+      <li><a class="waves-effect" href="/colourpicker">Train the AI!<i class="material-icons">edit</i></a></li>
     </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons">menu</i></a>
   </header>
   <main>
     {{{ body }}}
@@ -84,18 +74,25 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 id="grad1">JS Colour Picker</h5>
-          <p id="grad1">JS Colour picker write something cool here</p>
+          <h5 class="grad1">AI Colour Picker</h5>
+          <p class="grad1">AI Colour Picker is an user-feed artificial intelligence application that differentiates
+            between white and black text on a given background colour.</p>
+          <br>
+          <p class="grad1">Special Thanks to <a href="https://github.com/arjitkhullar" alt="Arjit's GitHub" class="githubLink grey-text text-lighten-3">Arjit</a>
+            and <a href="https://github.com/robertleeplummerjr" alt="Robert's GitHub" class="githubLink grey-text text-lighten-3">Robert</a>
+            for making this project possible!</p>
         </div>
         <div class="col l4 offset-l2 s12">
 
           <ul>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/kalieshapickering/text-on-colour"><strong>GitHub
+            <li><a class="grey-text text-lighten-3 githubLink" href="https://github.com/kalieshapickering/text-on-colour"><strong>GitHub
                   Repo</strong></a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Arvin's Portfolio</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Kaliesha's Portfolio</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Gaby's Portfolio</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Jon's Portfolio</a></li>
+            <li><a class="grey-text text-lighten-3 githubLink" href="https://arv433.github.io/Responsive-Portfolio/">Arvin's
+                Portfolio</a></li>
+            <li><a class="grey-text text-lighten-3 githubLink" href="https://kalieshapickering.github.io/Bootstrap-Portfolio/">Kaliesha's
+                Portfolio</a></li>
+            <li><a class="grey-text text-lighten-3 githubLink" href="#!">Gaby's Portfolio</a></li>
+            <li><a class="grey-text text-lighten-3 githubLink" href="#!">Jon's Portfolio</a></li>
           </ul>
         </div>
       </div>
@@ -109,6 +106,7 @@
   <!-- components -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script type="text/javascript" src="/javascript/app.js"></script>
 </body>
 

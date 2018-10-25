@@ -1,21 +1,12 @@
 body {
-    background-color: rgb(237, 237, 237)
-}
-#colorpicker {
-    margin-left: 739px !important;
-    margin-top: 25px !important;
-}
-
-.main {
-    margin-top: -50px !important;
-    margin-left: 400px !important;
+    background-color: rgb(237, 237, 237);
 }
 
 #color {
-    margin-top: 115px;
-    margin-left: 601px;
     font-size: 75px;
     font-weight: bolder;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 body {
@@ -26,31 +17,34 @@ body {
 
 main {
     flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#colourPickerContainer {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .colour1 {
-    border-style: solid;
-    border-width: 10px;
-    height: 273px;
-    width: 350px;
-    margin-left: 38%;
-    margin-top:3%;
+    float: left;
 }
 
 .colour2 {
-    border-style: solid;
-    border-width: 10px;
-    height: 273px;
-    width: 350px;
-    margin-left: 10%;
-    margin-top:3%;
+    float: right;
 }
 
-.cpTitle{
+.cpTitle {
     margin-left: 27%;
 }
 
-#grad1 {
+.grad1 {
     background: red;
     background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
     background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
@@ -59,22 +53,23 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.backfeature{
+
+.backfeature {
     border-radius: 6%;
 }
-a {
+
+a:not(.githubLink) {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
 }
 
 a:hover {
-    background-color: #ddd;
     color: black;
 }
 
 .previous {
-    background-color:rgb(52, 49, 49);
+    background-color: rgb(52, 49, 49);
     color: white;
 }
 
@@ -82,34 +77,114 @@ a:hover {
     background-color: rgb(52, 49, 49);
     color: white;
 }
+
 .round {
     border-radius: 50%;
 }
-.searchBar{
+
+.searchBar {
     margin-top: 7% !important;
     margin-left: -2% !important;
     width: 87%;
 }
-.searchIcon{
+
+.searchIcon {
     margin-top: -73% !important;
     margin-left: -22% !important;
-    
 }
-.close{
+
+.close {
     margin-top: -10% !important;
 }
+
 .inputBox {
+    margin: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-style: solid;
+    border-width: 10px;
+    height: 273px;
+    width: 350px;
 }
+
 .colourText {
     font-size: 75px;
     font-weight: bold;
 }
+
 #whiteText {
     color: #ffffff;
 }
+
 #blackText {
     color: #000000;
+}
+
+.flowchart {
+    max-width: 100%
+}
+
+.next {
+    margin-top: 987%;
+}
+
+.previous {
+    margin-top: 987%;
+}
+
+.libraryLogos {
+    width: 150px;
+    display: block;
+    margin-left: 60%;
+}
+
+.libraryTitle {
+    margin-left: 60%;
+}
+
+.ffnImage {
+    width: 450px;
+}
+
+.grey-text {
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+h2 {
+    letter-spacing: 2px;
+}
+
+.about2 {
+    max-width: 850px;
+}
+
+.farbtastic {
+    margin: 0 auto !important;
+    margin-top: 5px !important;
+}
+
+#boxesContainer {
+    display: absolute;
+    /* justify-content: space-evenly; */
+    width: 120%;
+    margin: 0 auto !important;
+}
+
+.trainPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60em;
+}
+
+.githubLink:hover {
+    text-decoration: underline !important;
+}
+
+.githubLink {
+    -webkit-text-fill-color: currentColor !important;
+    display: inline;
 }
